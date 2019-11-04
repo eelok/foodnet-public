@@ -1,0 +1,26 @@
+{
+  "name": "cutiepets",
+  "version": "1.0.0",
+  "description": "static web",
+  "main": "index.js",
+  "scripts": {
+    "scss:run": "node-sass styles -o src/main/resources/static/css",
+    "scss:watch": "node-sass --watch styles -o src/main/resources/static/css",
+    "start": "npm run scss:run && npm run scss:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eelok/CutiePets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eelok/CutiePets/issues"
+  },
+  "homepage": "https://github.com/eelok/CutiePets#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "concurrently": "^5.0.0",
+    "live-server": "^1.2.1"
+  }
+}
