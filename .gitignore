@@ -31,8 +31,9 @@ out/
 /nbdist/
 /.nb-gradle/
 
-.idea/
-
-
-node_modules
 css
+
+gradlew
+gradlew.bat
+gradle
+build
