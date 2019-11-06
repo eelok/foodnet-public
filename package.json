@@ -6,6 +6,7 @@
   "scripts": {
     "scss:run": "node-sass styles -o src/main/resources/static/css",
     "scss:watch": "node-sass --watch styles -o src/main/resources/static/css",
+    "test": "cypress run",
     "start": "npm run scss:run && npm run scss:watch"
   },
   "repository": {
@@ -19,8 +20,9 @@
   },
   "homepage": "https://github.com/eelok/CutiePets#readme",
   "devDependencies": {
-    "node-sass": "^4.12.0",
     "concurrently": "^5.0.0",
-    "live-server": "^1.2.1"
+    "cypress": "^3.6.0",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.12.0"
   }
 }
