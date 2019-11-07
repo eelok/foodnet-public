@@ -42,3 +42,4 @@ cypress/videos/
 cypress/screenshots/
 
 bin
+.DS_Store

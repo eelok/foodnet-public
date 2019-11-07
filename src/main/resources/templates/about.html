@@ -6,41 +6,61 @@
     <title>About Us</title>
 </head>
 <body>
-    <div class="container">
-        <div class="title--box">
-            <h2 class="title--team">OUR TEAM: Mariia, Maksim, Arthur</h2>
-            <p id="time" th:text="'The current time is: ' + ${time}"></p>
+<div class="container">
+    <div class="title--box">
+        <h2 class="title--team">OUR TEAM: Mariia, Maksim, Arthur</h2>
+        <p id="time" th:text="'The current time is: ' + ${time}"></p>
+        <div class="project-goals">
+            <h2>Project Goals:</h2>
+            <p>Create your own recipes and share them with other users.<br>
+                Give user feedback on the nutritional value of the recipe.<br>
+                Organize your favorite recipes in one place.</p>
         </div>
-        <div class="person--gallery">
-            <div class="person--box utility">
-                <div class="person--media">
-                    <img src="https://picsum.photos/id/1012/230/230" alt="Joshua Pupkin"/>
-                </div>
-                <div class="person--text">
-                    <div class="person--info">
-                        <h2>Joshua Pupkin</h2>
-                        <h3>Goals:</h3>
-                        <p>improve his cooking ability</p>
-                        <p>make his daily cooking routine easy</p>
-                        <p>wants to know how to cook more dishes </p>
-                    </div>
+    </div>
+    <div class="person--gallery">
+        <div class="person--box utility">
+            <div class="person--media">
+                <img src="https://picsum.photos/id/1012/230/230" alt="Joshua Pupkin"/>
+            </div>
+            <div class="person--text">
+                <div class="person--info">
+                    <h2>Joshua</h2>
+                    <h3>Demographics:</h3>
+                    <p>Age: about 25-35</p>
+                    <p>Joshua lives in Berlin with his dog and girlfriend.<br>
+                        He is a student, has some part-time job in IT, the income is not very big.</p>
+                    <h3>Behaviors:</h3>
+                    <p>Joshua tries to have a healthy lifestyle.<br>
+                        He just left home and doesn’t know how to cook so he doesn’t cook very often.<br>
+                        If he cooks he sticks to ramen and boiled potatoes or calls his mom for help.
+                    </p>
+                    <h3>Needs and Goals:</h3>
+                    <p>Joshua wishes to improve his cooking ability.<br>
+                        He wants to make his daily cooking routine easy.<br>
+                        He wants to know how to cook more dishes.</p>
                 </div>
             </div>
-            <div class="person--box">
-                <div class="person--media">
-                    <img src="https://picsum.photos/id/1005/230/230" alt="Anna Gurke"/>
-                </div>
-                <div class="person--text">
-                    <div class="person--info">
-                        <h2>Anna Gurke</h2>
-                        <h3>Goals:</h3>
-                        <p>start a blog about cooking</p>
-                        <p>post recipes online</p>
-                        <p>help people be better at cooking</p>
-                    </div>
+        </div>
+        <div class="person--box utility">
+            <div class="person--media">
+                <img src="https://picsum.photos/id/1005/230/230" alt="Anna Gurke"/>
+            </div>
+            <div class="person--text">
+                <div class="person--info">
+                    <h2>Anna</h2>
+                    <h3>Demographics:</h3>
+                    <p>Age: about 30 – 40</p>
+                    <p>Anna lives in Italy, works as a chef in a restaurant.</p>
+                    <h3>Behaviors</h3>
+                    <p>Likes to cook, likes to share with people cool recipes. Interested in healthy food.</p>
+                    <h3>Needs and Goals:</h3>
+                    <p>She wants to make her own recipe library.<br>
+                        She wants to start a blog about cooking and wants to post recipes online.<br>
+                        Get feedback for her created recipes from all over the world.</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
