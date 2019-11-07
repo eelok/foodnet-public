@@ -15,7 +15,7 @@ describe('About us Test', function () {
         cy.get('.person--info h2').should('not.be.empty');
     });
     it("Has word goals", function () {
-        cy.get('.person--info h3').should('have.text', 'Goals:Goals:')
+        cy.get('.person--info h3').should('have.text', 'Demographics:Behaviors:Needs and Goals:Demographics:Behaviors:Needs and Goals:')
     });
     it('Has goals text info', function () {
         cy.get('.person--info p').should('not.be.empty');
