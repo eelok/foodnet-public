@@ -11,10 +11,13 @@ describe('About us Test', function () {
     it('Has time', function () {
         cy.contains('time is');
     });
-    it('Has project members', function () {
+    it('Has names of personas text info', function () {
         cy.get('.person--info h2').should('not.be.empty');
     });
-    it('Has project members', function () {
+    it("Has word goals", function () {
+        cy.get('.person--info h3').should('have.text', 'Goals:Goals:')
+    });
+    it('Has goals text info', function () {
         cy.get('.person--info p').should('not.be.empty');
     });
 });
