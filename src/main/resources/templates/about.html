@@ -6,9 +6,41 @@
     <title>About Us</title>
 </head>
 <body>
-<div class="content">
-    <h1>The project members are:<br> Mariia, Maksim, Arthur</h1>
-    <p id="time" th:text="'The current time is: ' + ${time}"></p>
-</div>
+    <div class="container">
+        <div class="title--box">
+            <h2 class="title--team">OUR TEAM: Mariia, Maksim, Arthur</h2>
+            <p id="time" th:text="'The current time is: ' + ${time}"></p>
+        </div>
+        <div class="person--gallery">
+            <div class="person--box utility">
+                <div class="person--media">
+                    <img src="https://picsum.photos/id/1012/230/230" alt="Joshua Pupkin"/>
+                </div>
+                <div class="person--text">
+                    <div class="person--info">
+                        <h2>Joshua Pupkin</h2>
+                        <h3>Goals:</h3>
+                        <p>improve his cooking ability</p>
+                        <p>make his daily cooking routine easy</p>
+                        <p>wants to know how to cook more dishes </p>
+                    </div>
+                </div>
+            </div>
+            <div class="person--box">
+                <div class="person--media">
+                    <img src="https://picsum.photos/id/1005/230/230" alt="Anna Gurke"/>
+                </div>
+                <div class="person--text">
+                    <div class="person--info">
+                        <h2>Anna Gurke</h2>
+                        <h3>Goals:</h3>
+                        <p>start a blog about cooking</p>
+                        <p>post recipes online</p>
+                        <p>help people be better at cooking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

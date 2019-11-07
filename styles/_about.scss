@@ -1,17 +1,69 @@
-.content{
-  margin: 4rem auto;
-  padding: 3rem;
-  width: 50rem;
-  background-color: $color-light-green;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 60rem;
 }
-h1 {
-  line-height: 1.5;
-  font-weight: 400;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.title {
+  &--box{
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    color: $color-black-light-text;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+  }
+  &--team{
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
 }
-p {
-  font-size: 2rem;
-  text-align: center;
+.person {
+  &--gallery{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--box{
+    display: flex;
+    flex-direction: row;
+    background-color: $color-black-light-blue;
+  }
+
+  &--media{
+    flex: 0 1 20rem;
+    padding: 2rem;
+  }
+
+  &--text{
+    flex: 1 1 auto;
+    padding: 1rem;
+  }
+
+  &--info{
+    color: $color-black-light-text;
+    h2 {
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      margin: 1rem 0rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.utility {
+  margin-bottom: 2rem;
 }

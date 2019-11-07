@@ -37,3 +37,8 @@ gradlew
 gradlew.bat
 gradle
 build
+
+cypress/videos/
+cypress/screenshots/
+
+bin
