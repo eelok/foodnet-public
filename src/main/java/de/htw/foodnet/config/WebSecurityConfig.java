@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/about").hasRole("CHEF")
+                .antMatchers("/about").permitAll()
                 .antMatchers("/recipes/").hasAnyRole()
                 .antMatchers("/recipes/new").hasRole("CHEF")
                 .anyRequest().authenticated()
@@ -34,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 User.builder()
                         .username("student")
                         .password(passwordEncoder().encode("password"))
-                        .roles("STUDENT")
+                        .roles("USER")
                         .build();
         UserDetails chef =
                 User.builder()
