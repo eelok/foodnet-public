@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>recipes</title>
+    <title>Home Page</title>
 </head>
 <body>
 <header>
     <div th:replace="fragments/top-navigation-bar :: topnavbar"></div>
 </header>
-<a href="createRecipes.html">new Recipes</a>
-<h1>Fild all your recipes hier:</h1>
+<main>
+    <div th:replace="fragments/image-card :: image-card"></div>
+</main>
+
 </body>
 </html>
