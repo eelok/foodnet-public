@@ -10,3 +10,6 @@ addons:
   apt:
     packages:
       - postgresql-12
+env:
+  global:
+    - PGPORT=5432
