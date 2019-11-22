@@ -3,12 +3,6 @@ language: java
 services:
   - postgresql
 
-
-before_install:
-  - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
-  - sudo service postgresql restart
-  - sleep 1
-
 before_script:
   - psql -c 'create database foodNet;' -U postgres
 
@@ -17,6 +11,7 @@ addons:
   apt:
     packages:
       - postgresql-11
+      - postgresql-client-11
 env:
   global:
     - PGPORT=5433
