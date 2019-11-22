@@ -38,7 +38,7 @@ public class RecipesController {
         model.addAttribute("message", "Recipe has been saved");
         model.addAttribute("recipe", new Recipe());
 
-        return new ModelAndView("createRecipesInput");
+        return new ModelAndView("newRecipes");
     }
 
 }
