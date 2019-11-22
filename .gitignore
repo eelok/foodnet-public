@@ -43,3 +43,4 @@ cypress/screenshots/
 
 bin
 .DS_Store
+application.properties
