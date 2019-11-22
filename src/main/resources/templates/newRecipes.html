@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Create Recipes</title>
+</head>
+<body>
+<div th:replace="fragments/top-navigation-bar :: topnavbar"></div>
+<div class="container">
+    <div class="message message--success" th:if="${message != null}" th:text="${message}"></div>
+    <div class="row">
+        <form class="col s12" th:object="${recipe}" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="input example -> pasta pesto" id="recipe_name" type="text" th:field="*{name}" class="validate">
+                    <label class="active" for="recipe_name">Recipe Name:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input  placeholder="input - number -> 15" id="prepare_time" type="text" th:field="*{prepareTime}" class="validate">
+                    <label class="active" for="prepare_time">Prepare Time</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="input - number -> 30" id="cook_time" type="text" th:field="*{cookTime}" class="validate">
+                    <label class="active" for="cook_time">Cooking Time</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="input example-> potato:9, carrot:4, sweet pepper:3" id="ingredients" type="text" th:field="*{ingredientsList}" class="validate">
+                    <label class="active" for="ingredients">Ingredients</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="description" rows="5" class="materialize-textarea" th:field="*{description}" placeholder="input example-> wash and peel the potatoes, cut them into">
+
+                    </textarea>
+                    <label class="active" for="description">Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="grid-example col s12 m6">
+                    <button type="submit" class="waves-effect waves-light btn-large">Create Recipe</button>
+                </div>
+            </div>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

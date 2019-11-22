@@ -1,0 +1,11 @@
+version: "3"
+services:
+  postgres:
+    image: "postgres"
+    container_name: "foodnet_postgres"
+    environment:
+      - POSTGRES_USER=foodnet
+      - POSTGRES_PASSWORD=foodnet
+      - POSTGRES_DB=foodnet
+    ports:
+      - "5432:5432"

@@ -2,23 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/main.css">
     <title>About Us</title>
 </head>
 <body>
+    <div th:replace="fragments/top-navigation-bar :: topnavbar"></div>
 <div class="container">
     <div class="title--box">
-        <h2 class="title--team">OUR TEAM: Mariia, Maksim, Arthur</h2>
+        <h5 class="title--team">OUR TEAM: Mariia, Maksim, Arthur</h5>
         <p id="time" th:text="'The current time is: ' + ${time}"></p>
         <div class="project-goals">
-            <h2>Project Goals:</h2>
+            <h5>Project Goals:</h5>
             <p>Create your own recipes and share them with other users.<br>
                 Give user feedback on the nutritional value of the recipe.<br>
                 Organize your favorite recipes in one place.</p>
         </div>
     </div>
     <div class="person--gallery">
-        <div class="person--box utility">
+        <div class="person--box utility  blue-grey lighten-5">
             <div class="person--media">
                 <img src="https://picsum.photos/id/1012/230/230" alt="Joshua Pupkin"/>
             </div>
@@ -41,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="person--box utility">
+        <div class="person--box utility blue-grey lighten-5">
             <div class="person--media">
                 <img src="https://picsum.photos/id/1005/230/230" alt="Anna Gurke"/>
             </div>
