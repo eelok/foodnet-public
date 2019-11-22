@@ -8,6 +8,7 @@ class FoodNetApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

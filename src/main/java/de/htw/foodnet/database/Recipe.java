@@ -23,7 +23,7 @@ public class Recipe {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany()
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name= "recipe_id")
     private List<Ingredient> ingredientsList;
 
