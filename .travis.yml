@@ -1,4 +1,6 @@
 language: java
+
+
 services:
   - postgresql
 
@@ -6,10 +8,10 @@ before_script:
   - psql -c 'create database foodNet;' -U postgres
 
 addons:
-  postgresql: "12"
+  postgresql: "11"
   apt:
     packages:
-      - postgresql-12
+      - postgresql-11
 env:
   global:
     - PGPORT=5432
