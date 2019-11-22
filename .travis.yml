@@ -14,4 +14,4 @@ addons:
       - postgresql-11
 env:
   global:
-    - PGPORT=5432
+    - PGPORT=5433
