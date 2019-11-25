@@ -1,3 +1,11 @@
+## Setup environment variables
+```nano ~/.bash_profile```
+
+    export PGPORT=5432
+    export PGUSER=postgres
+    export PGPASSWORD=blank
+
+```source .bash_profile```
 
 ## first step 
 ```npm install```
@@ -17,7 +25,7 @@ gradle clean build
 ## start postgres
 docker-compose up
 
-## kill postgress
+## kill postgres
 docker-compose down
 
 ## list docker running docker containers
