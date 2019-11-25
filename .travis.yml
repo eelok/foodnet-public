@@ -12,9 +12,8 @@ services:
 env:
   global:
     - PGPORT=5432
-    - PGUSER=user
-    - PGPASSWORD=test
+    - PGUSER=postgres
+    - PGPASSWORD=
 
 before_script:
   - psql -c 'create database foodNet;' -U postgres
-  - psql -c "CREATE USER 'user' WITH PASSWORD 'test';" -U postgres
