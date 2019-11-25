@@ -14,5 +14,9 @@ env:
     - PGPORT=5433
     - PGUSER=postgres
     - PGPASSWORD=
+postgres:
+  adapter: postgresql
+  database: foodNet
 
 before_script:
+  - psql -c 'create database foodNet;' -U postgres
