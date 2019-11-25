@@ -3,12 +3,12 @@ language: java
 services:
   - postgresql
 
-addons:
-  postgresql: "11"
-  apt:
-    packages:
-      - postgresql-11
-      - postgresql-client-11
+#addons:
+#  postgresql: "11"
+#  apt:
+#    packages:
+#      - postgresql-11
+#      - postgresql-client-11
 env:
   global:
     - PGPORT=5433
@@ -16,4 +16,4 @@ env:
     - PGPASSWORD=
 
 before_script:
-  - psql -c 'create database foodNet;' -U postgres
+  - psql -c 'create database foodNet;' -U postgres -h 127.0.0.1
