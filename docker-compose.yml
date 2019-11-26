@@ -4,8 +4,8 @@ services:
     image: "postgres"
     container_name: "foodnet_postgres"
     environment:
-      - POSTGRES_USER=foodnet
-      - POSTGRES_PASSWORD=foodnet
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=
       - POSTGRES_DB=foodnet
     ports:
       - "5432:5432"
