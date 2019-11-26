@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.com/arthurlerke/FoodNet.svg?token=xmdTwBBxAiFLXrZbf1Zv&branch=master)](https://travis-ci.com/arthurlerke/FoodNet)
+
 ## Setup environment variables
 ```nano ~/.bash_profile```
 
