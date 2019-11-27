@@ -30,7 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/main.css").permitAll()
                 .antMatchers("/about").permitAll()
                 .antMatchers("/register").permitAll()
-                .antMatchers("/recipes").permitAll()
+                .antMatchers("/recipes").hasAnyAuthority()
                 .antMatchers("/recipes/new").hasAuthority(CHEF)
                 .anyRequest()
                 .authenticated()

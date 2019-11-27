@@ -50,27 +50,27 @@ public class InitialDataLoader implements
         return role;
     }
     private void createStudent() {
-        if (userRepository.findByName("student") != null) {
+        if (userRepository.findByUsername("student") != null) {
             return;
         }
         Role role = roleRepository.findByName("USER");
         User user = new User();
-        user.setName("student");
+        user.setUsername("student");
         user.setPassword(passwordEncoder.encode("test"));
         user.setRoles(Arrays.asList(role));
         user.setEnabled(true);
         userRepository.save(user);
     }
     private void createChef() {
-        if (userRepository.findByName("chef") != null) {
+        if (userRepository.findByUsername("chef") != null) {
             return;
         }
         Role userRole = roleRepository.findByName("USER");
         Role chefRole = roleRepository.findByName("CHEF");
         User user = new User();
-        user.setName("chef");
+        user.setUsername("chef");
         user.setPassword(passwordEncoder.encode("test"));
-        user.setRoles(Arrays.asList(chefRole));
+        user.setRoles(Arrays.asList(chefRole, userRole));
         user.setEnabled(true);
         userRepository.save(user);
     }

@@ -14,10 +14,10 @@ env:
     - PGPORT=5432
     - PGUSER=postgres
     - PGPASSWORD=
-deploy:
-  provider: heroku:git
-  app: foodnet-htw
-  api_key: d3c097de-d7cc-4074-a17f-352fc914810c
+#deploy:
+#  provider: heroku:git
+#  app: foodnet-htw
+#  api_key: d3c097de-d7cc-4074-a17f-352fc914810c
 
 before_script:
   - psql -c 'create database foodNet;' -U postgres

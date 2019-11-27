@@ -1,6 +1,5 @@
 package de.htw.foodnet.database.Entity;
 
-import de.htw.foodnet.database.Entity.Role;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
@@ -17,7 +16,7 @@ public class User {
 
     @NotEmpty
     @Column(nullable = false, unique = true)
-    private String name;
+    private String username;
     @NotEmpty
     private String password;
     private boolean enabled;
@@ -40,12 +39,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String name) {
+        this.username = name;
     }
 
     public String getPassword() {
