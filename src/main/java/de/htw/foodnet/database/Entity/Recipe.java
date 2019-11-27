@@ -1,9 +1,12 @@
 package de.htw.foodnet.database;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@EnableAutoConfiguration
 @Table(name="recipes")
 public class Recipe {
 

@@ -1,6 +1,6 @@
 package de.htw.foodnet.recipes;
 
-import de.htw.foodnet.database.Recipe;
+import de.htw.foodnet.database.Entity.Recipe;
 import de.htw.foodnet.database.RecipeRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

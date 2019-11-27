@@ -1,6 +1,6 @@
 package de.htw.foodnet.recipes;
 
-import de.htw.foodnet.database.Ingredient;
+import de.htw.foodnet.database.Entity.Ingredient;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
