@@ -1,4 +1,4 @@
-package de.htw.foodnet.recipes;
+package de.htw.foodnet.pages.recipes;
 
 import de.htw.foodnet.database.Entity.Ingredient;
 import org.springframework.core.convert.converter.Converter;

@@ -1,5 +1,6 @@
-package de.htw.foodnet.database;
+package de.htw.foodnet.database.Entity;
 
+import de.htw.foodnet.database.Entity.Ingredient;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
@@ -35,10 +36,10 @@ public class Recipe {
 
     public Recipe(
             String name,
-                  String description,
-                  List<Ingredient> ingredientsList,
-                  int cookTime,
-                  int prepareTime
+            String description,
+            List<Ingredient> ingredientsList,
+            int cookTime,
+            int prepareTime
     ) {
         this.name = name;
         this.description = description;

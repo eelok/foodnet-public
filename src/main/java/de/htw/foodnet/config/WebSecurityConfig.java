@@ -11,6 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.util.AntPathMatcher;
 
 
 @EnableWebSecurity
@@ -22,34 +24,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+            .antMatchers("/resources/**").permitAll()
             .antMatchers("/").permitAll()
             .antMatchers("/images/*.jpg").permitAll()
             .antMatchers("/css/main.css").permitAll()
             .antMatchers("/about").permitAll()
             .antMatchers("/recipes/").hasAnyRole()
-            .antMatchers(HttpMethod.GET, "/recipes/new").hasRole(CHEF)
-            .antMatchers(HttpMethod.POST, "/recipes/new").hasRole(CHEF)
+            .antMatchers("/recipes/new").hasAuthority(CHEF)
             .anyRequest().authenticated()
             .and()
-            .formLogin();
-    }
-
-    @Bean
-    @Override
-    public UserDetailsService userDetailsService() {
-        UserDetails student =
-                User.builder()
-                        .username("student")
-                        .password(passwordEncoder().encode("password"))
-                        .roles(USER)
-                        .build();
-        UserDetails chef =
-                User.builder()
-                        .username("chef")
-                        .password(passwordEncoder().encode("chef"))
-                        .roles(CHEF)
-                        .build();
-        return new InMemoryUserDetailsManager(student, chef);
+            .formLogin()
+                .loginPage("/login")
+                .defaultSuccessUrl("/")
+                .failureUrl("/login?error")
+                .permitAll()
+            .and()
+            .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .permitAll()
+            ;
     }
 
     @Bean

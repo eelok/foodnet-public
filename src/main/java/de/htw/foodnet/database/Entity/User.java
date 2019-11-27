@@ -1,32 +1,37 @@
-package de.htw.foodnet.database;
+package de.htw.foodnet.database.Entity;
 
+import de.htw.foodnet.database.Entity.Role;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 
 @Entity
 @EnableAutoConfiguration
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotEmpty
+    @Column(nullable = false, unique = true)
     private String name;
+    @NotEmpty
     private String password;
     private boolean enabled;
 
 
     @ManyToMany
     @JoinTable(
-            name = "users_roles",
+            name = "user_role",
             joinColumns = @JoinColumn(
                     name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
-
+    public User () {}
     public Long getId() {
         return id;
     }

@@ -1,4 +1,4 @@
-package de.htw.foodnet.recipes;
+package de.htw.foodnet.pages.recipes;
 
 import de.htw.foodnet.database.Entity.Recipe;
 import de.htw.foodnet.database.RecipeRepository;
