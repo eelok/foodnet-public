@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>recipes</title>
+    <title>Recipes</title>
 </head>
 <body>
 <header>
     <div th:replace="fragments/top-navigation-bar :: topnavbar"></div>
 </header>
-<a href="/recipes/new">new Recipes</a>
-<h1>Fild all your recipes hier:</h1>
+<div sec:authorize="hasAuthority('CHEF')">
+    <a data-cy="newRecipe" href="/recipes/new">Add new recipe</a>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Recipe</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${recipes.empty}">
+        <td colspan="2"> No Recipes Available </td>
+    </tr>
+    <tr th:each="recipe : ${recipes}">
+        <td><span th:text="${recipe.name}">Recipe</span></td>
+        <td><span th:text="${recipe.description}">Description</span></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

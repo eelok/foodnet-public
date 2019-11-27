@@ -12,7 +12,7 @@ public class LoginController {
     public ModelAndView getLoginPage() {
         return new ModelAndView("login");
     }
-    @GetMapping("/register")
+    @RequestMapping("/register")
     public ModelAndView getRegisterPage() {
         return new ModelAndView("register");
     }

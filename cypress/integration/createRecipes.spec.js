@@ -1,7 +1,7 @@
 function login() {
     cy.get('input[name=username]').type("chef");
-    cy.get('input[name=password]').type('chef');
-    cy.get('.btn').contains("Sign in").click();
+    cy.get('input[name=password]').type('test');
+    cy.get('.btn').contains("Login").click();
 }
 
 describe('new Recipe Page Test', function () {

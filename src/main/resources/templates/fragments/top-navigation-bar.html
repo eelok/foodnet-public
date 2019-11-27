@@ -6,7 +6,9 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/recipes">Recipes</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <div sec:authorize="hasAuthority('USER')">
+                    <li><a href="/logout">Logout</a></li>
+                </div>
             </ul>
         </div>
     </nav>
