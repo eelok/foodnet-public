@@ -8,6 +8,7 @@ import de.htw.foodnet.database.UserRepository;
 import de.htw.foodnet.service.RegisterForm;
 import de.htw.foodnet.service.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,6 +32,9 @@ public class LoginController {
     @Autowired
     RoleRepository roleRepository;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     @RequestMapping("/login")
     public ModelAndView getLoginPage() {
         return new ModelAndView("login");
@@ -51,7 +55,7 @@ public class LoginController {
         User user = new User();
         user.setEnabled(true);
         user.setUsername(form.getUsername());
-        user.setPassword(form.getPassword());
+        user.setPassword(passwordEncoder.encode(form.getPassword()));
         List<Role> roles = new LinkedList<>();
         Role userRole = roleRepository.findByName("USER");
         roles.add(userRole);
