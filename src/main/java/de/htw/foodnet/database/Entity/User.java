@@ -16,7 +16,7 @@ public class User {
 
     @NotEmpty
     @Column(nullable = false, unique = true)
-    private String username;
+    private String name;
     @NotEmpty
     private String password;
     private boolean enabled;
@@ -39,12 +39,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String name) {
-        this.username = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -64,6 +64,7 @@ public class User {
     }
 
     public Collection<Role> getRoles() {
+        System.out.println(roles);
         return roles;
     }
 

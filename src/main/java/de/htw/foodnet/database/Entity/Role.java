@@ -40,10 +40,16 @@ public class Role {
     }
 
     public Collection<User> getUsers() {
+        System.out.println(users);
         return users;
     }
 
     public void setUsers(Collection<User> users) {
         this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        return "Role = " + name;
     }
 }

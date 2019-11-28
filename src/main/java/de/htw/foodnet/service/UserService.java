@@ -21,11 +21,11 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
+        User user = userRepository.findByName(username);
         if(null == user) {
             throw new UsernameNotFoundException(username + "not found");
         }
-        return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),getAuthorities(user));
+        return new org.springframework.security.core.userdetails.User(user.getName(),user.getPassword(),getAuthorities(user));
     }
     private static Collection<? extends GrantedAuthority> getAuthorities(User user) {
         String[] userRoles = user.getRoles().stream().map((role) -> role.getName()).toArray(String[]::new);

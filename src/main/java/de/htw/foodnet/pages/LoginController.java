@@ -1,6 +1,5 @@
 package de.htw.foodnet.pages;
 
-import de.htw.foodnet.database.Entity.Recipe;
 import de.htw.foodnet.database.Entity.Role;
 import de.htw.foodnet.database.Entity.User;
 import de.htw.foodnet.database.RoleRepository;
@@ -54,7 +53,7 @@ public class LoginController {
         }
         User user = new User();
         user.setEnabled(true);
-        user.setUsername(form.getUsername());
+        user.setName(form.getUsername());
         user.setPassword(passwordEncoder.encode(form.getPassword()));
         List<Role> roles = new LinkedList<>();
         Role userRole = roleRepository.findByName("USER");
