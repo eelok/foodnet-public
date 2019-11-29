@@ -1,6 +1,6 @@
-package de.htw.foodnet.database.Entity;
+package de.htw.foodnet.recipes;
 
-import de.htw.foodnet.database.Entity.Ingredient;
+import de.htw.foodnet.recipes.Ingredient;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;

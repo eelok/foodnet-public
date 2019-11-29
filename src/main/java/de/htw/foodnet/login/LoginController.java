@@ -1,11 +1,5 @@
-package de.htw.foodnet.pages;
+package de.htw.foodnet.login;
 
-import de.htw.foodnet.database.Entity.Role;
-import de.htw.foodnet.database.Entity.User;
-import de.htw.foodnet.database.RoleRepository;
-import de.htw.foodnet.database.UserRepository;
-import de.htw.foodnet.service.RegisterForm;
-import de.htw.foodnet.service.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;

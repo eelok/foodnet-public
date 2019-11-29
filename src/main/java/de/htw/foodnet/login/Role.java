@@ -1,4 +1,4 @@
-package de.htw.foodnet.database.Entity;
+package de.htw.foodnet.login;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 

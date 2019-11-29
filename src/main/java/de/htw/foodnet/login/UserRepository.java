@@ -1,6 +1,5 @@
-package de.htw.foodnet.database;
+package de.htw.foodnet.login;
 
-import de.htw.foodnet.database.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

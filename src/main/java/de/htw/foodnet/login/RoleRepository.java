@@ -1,6 +1,5 @@
-package de.htw.foodnet.database;
+package de.htw.foodnet.login;
 
-import de.htw.foodnet.database.Entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 

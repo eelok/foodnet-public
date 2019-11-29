@@ -1,4 +1,4 @@
-package de.htw.foodnet.pages;
+package de.htw.foodnet.about;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,5 +1,6 @@
-package de.htw.foodnet.database.Entity;
+package de.htw.foodnet.login;
 
+import de.htw.foodnet.login.Role;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;

@@ -1,7 +1,5 @@
-package de.htw.foodnet.database;
+package de.htw.foodnet.login;
 
-import de.htw.foodnet.database.Entity.Role;
-import de.htw.foodnet.database.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

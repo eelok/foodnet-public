@@ -1,7 +1,7 @@
-package de.htw.foodnet.service;
+package de.htw.foodnet.login;
 
-import de.htw.foodnet.database.Entity.User;
-import de.htw.foodnet.database.UserRepository;
+import de.htw.foodnet.login.User;
+import de.htw.foodnet.login.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
