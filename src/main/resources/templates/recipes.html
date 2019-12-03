@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" th:href="@{css/main.css}">
     <title>Recipes</title>
 </head>
 <body>
 <header>
     <div th:replace="fragments/top-navigation-bar :: topnavbar"></div>
 </header>
-<div sec:authorize="hasAuthority('CHEF')">
-    <a data-cy="newRecipe" href="/recipes/new">Add new recipe</a>
+<div class="container">
+    <div sec:authorize="hasAuthority('CHEF')" class="recipe-toolbar">
+        <a data-cy="newRecipe" href="/recipes/new" class="waves-effect waves-light btn-large red lighten-2">Add
+            new
+            recipe</a>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Recipe</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${recipes.empty}">
+            <td colspan="2"> No Recipes Available</td>
+        </tr>
+        <tr th:each="recipe : ${recipes}">
+            <td><span th:text="${recipe.name}">Recipe</span></td>
+            <td><span th:text="${recipe.description}">Description</span></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<table>
-    <thead>
-    <tr>
-        <th>Recipe</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:if="${recipes.empty}">
-        <td colspan="2"> No Recipes Available </td>
-    </tr>
-    <tr th:each="recipe : ${recipes}">
-        <td><span th:text="${recipe.name}">Recipe</span></td>
-        <td><span th:text="${recipe.description}">Description</span></td>
-    </tr>
-    </tbody>
-</table>
 </body>
 </html>

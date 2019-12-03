@@ -1,13 +1,13 @@
-package de.htw.foodnet.index;
+package de.htw.foodnet.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class IndexController {
+public class HomePageController {
 
     @RequestMapping("/")
     public String getIndexPage(){
-        return "index";
+        return "home";
     }
 }

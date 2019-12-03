@@ -30,12 +30,11 @@ public class RecipesController {
     }
 
     @PostMapping("/new")
-    public ModelAndView postRecipe(@ModelAttribute Recipe recipe, Model model) {
+    public String postRecipe(@ModelAttribute Recipe recipe, Model model) {
         recipeRepository.save(recipe);
-        model.addAttribute("message", "Recipe has been saved");
         model.addAttribute("recipe", new Recipe());
 
-        return new ModelAndView("newRecipes");
+        return "redirect:/recipes";
     }
 
 }
