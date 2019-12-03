@@ -30,6 +30,7 @@
         <tr th:each="recipe : ${recipes}">
             <td><span th:text="${recipe.name}">Recipe</span></td>
             <td><span th:text="${recipe.description}">Description</span></td>
+            <td><img th:src="@{${'/recipes/photo/' + recipe.id}}" alt=""></td>
         </tr>
         </tbody>
     </table>
