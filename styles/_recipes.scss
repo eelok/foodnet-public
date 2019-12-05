@@ -1,0 +1,30 @@
+$font-size: 1rem;
+$line-height: 1.4;
+$lines-to-show: 4;
+
+.rec-time {
+  display: flex;
+  justify-content: space-evenly;
+  color: $color-light-orange;
+}
+.rec-title{
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.recipe-image{
+  height: 25rem;
+  width: 20rem;
+  object-fit: cover;
+}
+.rec-description p{
+  display: block;
+  display: -webkit-box;
+  height: $font-size*$line-height*$lines-to-show;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

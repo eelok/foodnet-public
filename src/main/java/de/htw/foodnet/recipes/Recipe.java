@@ -23,7 +23,7 @@ public class Recipe {
     @Column(name = "prepare_time")
     private int prepareTime;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 12000)
     private String description;
 
     @Lob
@@ -39,17 +39,19 @@ public class Recipe {
     }
 
     public Recipe(
-            String name,
-            String description,
-            List<Ingredient> ingredientsList,
-            int cookTime,
-            int prepareTime
+        String name,
+        String description,
+        List<Ingredient> ingredientsList,
+        int cookTime,
+        int prepareTime,
+        List<ImageFile> images
     ) {
         this.name = name;
         this.description = description;
         this.ingredientsList = ingredientsList;
         this.cookTime = cookTime;
         this.prepareTime = prepareTime;
+        this.images = images;
     }
 
     public Long getId() {
