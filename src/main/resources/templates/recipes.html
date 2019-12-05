@@ -12,27 +12,32 @@
 </header>
 <div class="container">
     <div sec:authorize="hasAuthority('CHEF')" class="recipe-toolbar">
-        <a data-cy="newRecipe" href="/recipes/new" class="waves-effect waves-light btn-large red lighten-2">Add
-            new
+        <a data-cy="newRecipe" href="/recipes/new" class="waves-effect waves-light btn-large red lighten-2">Add new
             recipe</a>
     </div>
-    <table>
-        <thead>
-        <tr>
-            <th>Recipe</th>
-            <th>Description</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:if="${recipes.empty}">
-            <td colspan="2"> No Recipes Available</td>
-        </tr>
-        <tr th:each="recipe : ${recipes}">
-            <td><span th:text="${recipe.name}">Recipe</span></td>
-            <td><span th:text="${recipe.description}">Description</span></td>
-        </tr>
-        </tbody>
-    </table>
+    <h1 th:if="${recipes.empty}">There is no recipe!!! Please add your favorite recipe :)</h1>
+    <div class="section" th:each="recipe : ${recipes}">
+        <div>
+            <div class="card horizontal">
+                <img class="recipe-image" th:src="@{${'/recipes/photo/' + recipe.id}}">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <span class="card-title" th:text="${recipe.name}">Recipe Name</span>
+                        <div class="rec-description">
+                            <div class="rec-title">Description:</div>
+                            <p th:text="${recipe.description}"></p>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <div class="rec-time">
+                            <div rec-time--prepar th:text=" 'PREPARE TIME: ' + ${recipe.prepareTime}"></div>
+                            <div rec-time--cook th:text=" 'COOK TIME: ' + ${recipe.cookTime}">Cook Time:</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

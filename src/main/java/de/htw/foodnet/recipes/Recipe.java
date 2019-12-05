@@ -1,6 +1,5 @@
 package de.htw.foodnet.recipes;
 
-import de.htw.foodnet.recipes.Ingredient;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
@@ -24,28 +23,35 @@ public class Recipe {
     @Column(name = "prepare_time")
     private int prepareTime;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 12000)
     private String description;
 
+    @Lob
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name= "recipe_id")
+    @JoinColumn(name="recipe_id")
+    private List<ImageFile> images;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name="recipe_id")
     private List<Ingredient> ingredientsList;
 
    public Recipe() {
     }
 
     public Recipe(
-            String name,
-            String description,
-            List<Ingredient> ingredientsList,
-            int cookTime,
-            int prepareTime
+        String name,
+        String description,
+        List<Ingredient> ingredientsList,
+        int cookTime,
+        int prepareTime,
+        List<ImageFile> images
     ) {
         this.name = name;
         this.description = description;
         this.ingredientsList = ingredientsList;
         this.cookTime = cookTime;
         this.prepareTime = prepareTime;
+        this.images = images;
     }
 
     public Long getId() {
@@ -95,6 +101,14 @@ public class Recipe {
 
     public void setPrepareTime(int prepareTime) {
         this.prepareTime = prepareTime;
+    }
+
+    public List<ImageFile> getImages() {
+        return images;
+    }
+
+    public void setImages(List<ImageFile> images) {
+        this.images = images;
     }
 
     @Override

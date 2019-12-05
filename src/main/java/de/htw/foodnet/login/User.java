@@ -1,6 +1,5 @@
 package de.htw.foodnet.login;
 
-import de.htw.foodnet.login.Role;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
@@ -25,11 +24,16 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "user_role",
-            joinColumns = @JoinColumn(
-                    name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(
-                    name = "role_id", referencedColumnName = "id"))
+        name = "user_role",
+        joinColumns = @JoinColumn(
+            name = "user_id",
+            referencedColumnName = "id"
+        ),
+        inverseJoinColumns = @JoinColumn(
+            name = "role_id",
+            referencedColumnName = "id"
+        )
+    )
     private Collection<Role> roles;
     public User () {}
     public Long getId() {
