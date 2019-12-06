@@ -19,6 +19,7 @@ import org.springframework.util.AntPathMatcher;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String USER = "USER";
+    private static final String USER2 = "USER2";
     private static final String CHEF = "CHEF";
 
     @Override
