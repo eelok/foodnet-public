@@ -17,6 +17,5 @@ describe('new Recipe Page Test', function () {
         cy.get('textarea[id=description]').type(
             "There's nothing like the taste of a cake you made in your own kitchen.");
         cy.get('.btn').contains('Create Recipe').click();
-        cy.get('.message.message--success').should('be.visible');
     });
 });
