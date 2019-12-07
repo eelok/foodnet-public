@@ -1,4 +1,4 @@
-package de.htw.foodnet.login;
+package de.htw.foodnet.register;
 
 public class RegisterForm {
     private String username;
