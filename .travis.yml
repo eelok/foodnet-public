@@ -15,7 +15,7 @@ env:
     - PGUSER=postgres
     - PGPASSWORD=
 deploy:
-  provider: heroku:git
+  provider: heroku
   app: foodnet-htw
   api_key: d3c097de-d7cc-4074-a17f-352fc914810c
 
