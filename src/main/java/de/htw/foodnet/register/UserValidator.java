@@ -1,6 +1,5 @@
-package de.htw.foodnet.login;
+package de.htw.foodnet.register;
 
-import de.htw.foodnet.login.RegisterForm;
 import de.htw.foodnet.login.User;
 import de.htw.foodnet.login.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
