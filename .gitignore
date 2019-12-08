@@ -6,6 +6,7 @@ build/
 !**/src/test/**
 node_modules/
 cypress/integration/examples
+gradle
 
 
 ### STS ###
@@ -41,4 +42,3 @@ cypress/screenshots/
 
 bin
 .DS_Store
-application-local.properties
