@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Foodnet</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" th:href="@{css/main.css}" type="text/css">
+</head>
+<body>
+<header layout:fragment="header">
+    <div th:replace="fragments/top-navigation-bar :: topnavbar"></div>
+</header>
+<div layout:fragment="content">
+    <p>Page content goes here</p>
+</div>
+</body>
+</html>

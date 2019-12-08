@@ -13,5 +13,4 @@ class FoodNetApplicationTest {
         assertTrue(true);
     }
 
-
 }

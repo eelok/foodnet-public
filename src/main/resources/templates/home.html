@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html
+    lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}"
+>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" th:href="@{css/main.css}" type="text/css">
     <title>Home Page</title>
 </head>
 <body>
-<header>
-    <div th:replace="fragments/top-navigation-bar :: topnavbar"></div>
-</header>
-
-<div class="container">
+<div layout:fragment="content" class="container">
     <div class="row">
         <div th:each="recipe : ${recipes}">
             <div th:replace="fragments/image-card :: image-card" th:with="recipe"></div>
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

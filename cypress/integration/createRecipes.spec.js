@@ -4,6 +4,10 @@ function login() {
     cy.get('.btn').contains("Login").click();
 }
 
+function uploadFile(){
+    cy.get('input[name=file]')
+}
+
 describe('new Recipe Page Test', function () {
     beforeEach(function () {
         cy.visit('http://localhost:8080/recipes/new');
