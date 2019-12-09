@@ -1,5 +1,6 @@
 package de.htw.foodnet.recipes;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -10,13 +11,10 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
+@AllArgsConstructor
 public class InitData {
 
     private final RecipeRepository recipeRepository;
-
-    public InitData(RecipeRepository recipeRepository) {
-        this.recipeRepository = recipeRepository;
-    }
 
     @PostConstruct
     public void postConstruct() throws IOException {

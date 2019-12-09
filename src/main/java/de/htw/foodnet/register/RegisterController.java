@@ -1,4 +1,5 @@
 package de.htw.foodnet.register;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,12 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
+@AllArgsConstructor
 public class RegisterController {
-    private RegisterService service;
 
-    public RegisterController(RegisterService service) {
-        this.service = service;
-    }
+    private RegisterService service;
 
     @GetMapping("/register")
     public String getRegisterPage(Model model) {
