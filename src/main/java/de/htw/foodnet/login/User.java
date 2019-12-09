@@ -2,7 +2,6 @@ package de.htw.foodnet.login;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -11,7 +10,6 @@ import java.util.Collection;
 @Entity
 @Data
 @NoArgsConstructor
-@EnableAutoConfiguration
 @Table(name = "users")
 public class User {
 

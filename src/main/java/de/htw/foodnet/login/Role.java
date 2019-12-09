@@ -1,10 +1,7 @@
 package de.htw.foodnet.login;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -12,7 +9,6 @@ import java.util.Collection;
 @Entity
 @Data
 @NoArgsConstructor
-@EnableAutoConfiguration
 @Table(name = "roles")
 public class Role {
 

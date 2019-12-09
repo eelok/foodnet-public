@@ -3,7 +3,6 @@ package de.htw.foodnet.register;
 import de.htw.foodnet.login.User;
 import de.htw.foodnet.login.UserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;

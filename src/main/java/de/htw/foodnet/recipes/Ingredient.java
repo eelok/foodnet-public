@@ -2,14 +2,12 @@ package de.htw.foodnet.recipes;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
 
 @Entity
 @Data
 @NoArgsConstructor
-@EnableAutoConfiguration
 @Table(name="ingredients")
 public class Ingredient {
 

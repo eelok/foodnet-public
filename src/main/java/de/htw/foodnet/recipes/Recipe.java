@@ -2,7 +2,6 @@ package de.htw.foodnet.recipes;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,7 +9,6 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@EnableAutoConfiguration
 @Table(name="recipes")
 public class Recipe {
 
