@@ -1,5 +1,7 @@
 package de.htw.foodnet.login;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
@@ -7,9 +9,12 @@ import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 
 @Entity
+@Data
+@NoArgsConstructor
 @EnableAutoConfiguration
 @Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -17,8 +22,10 @@ public class User {
     @NotEmpty
     @Column(nullable = false, unique = true)
     private String name;
+
     @NotEmpty
     private String password;
+
     private boolean enabled;
 
 
@@ -35,45 +42,5 @@ public class User {
         )
     )
     private Collection<Role> roles;
-    public User () {}
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public Collection<Role> getRoles() {
-        System.out.println(roles);
-        return roles;
-    }
-
-    public void setRoles(Collection<Role> roles) {
-        this.roles = roles;
-    }
 }
