@@ -4,6 +4,7 @@ import de.htw.foodnet.login.Role;
 import de.htw.foodnet.login.RoleRepository;
 import de.htw.foodnet.login.User;
 import de.htw.foodnet.login.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
@@ -12,21 +13,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Component
+@AllArgsConstructor
 public class RegisterService {
+
     private UserRepository userRepository;
     private UserValidator validator;
     private RoleRepository roleRepository;
     private PasswordEncoder passwordEncoder;
-
-    public RegisterService(UserRepository userRepository,
-                           UserValidator validator,
-                           RoleRepository roleRepository,
-                           PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
-        this.validator = validator;
-        this.roleRepository = roleRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
 
     public boolean registerUser(RegisterForm form, BindingResult result) {
         validator.validate(form, result);

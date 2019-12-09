@@ -1,8 +1,7 @@
 package de.htw.foodnet.recipes;
 
+import lombok.AllArgsConstructor;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,12 +18,10 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("recipes")
+@AllArgsConstructor
 public class RecipesController {
 
-    @Autowired
     private RecipeRepository recipeRepository;
-
-    @Autowired
     private PhotoRepository photoRepository;
 
     @RequestMapping(value = "")

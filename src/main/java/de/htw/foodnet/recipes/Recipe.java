@@ -1,12 +1,14 @@
 package de.htw.foodnet.recipes;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@EnableAutoConfiguration
+@Data
+@NoArgsConstructor
 @Table(name="recipes")
 public class Recipe {
 
@@ -35,8 +37,6 @@ public class Recipe {
     @JoinColumn(name="recipe_id")
     private List<Ingredient> ingredientsList;
 
-   public Recipe() {
-    }
 
     public Recipe(
         String name,
@@ -54,70 +54,4 @@ public class Recipe {
         this.images = images;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<Ingredient> getIngredientsList() {
-        return ingredientsList;
-    }
-
-    public void setIngredientsList(List<Ingredient> ingredientsList) {
-        this.ingredientsList = ingredientsList;
-    }
-
-
-    public int getCookTime() {
-        return cookTime;
-    }
-
-    public void setCookTime(int cookTime) {
-        this.cookTime = cookTime;
-    }
-
-    public int getPrepareTime() {
-        return prepareTime;
-    }
-
-    public void setPrepareTime(int prepareTime) {
-        this.prepareTime = prepareTime;
-    }
-
-    public List<ImageFile> getImages() {
-        return images;
-    }
-
-    public void setImages(List<ImageFile> images) {
-        this.images = images;
-    }
-
-    @Override
-    public String toString() {
-        return "Recipe{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", cookTime=" + cookTime +
-                ", prepareTime=" + prepareTime +
-                '}';
-    }
 }

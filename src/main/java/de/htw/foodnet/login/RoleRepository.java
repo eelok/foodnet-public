@@ -6,7 +6,10 @@ import org.springframework.stereotype.Component;
 @Component
 public
 interface RoleRepository extends JpaRepository<Role, Long> {
+
     Role findByName(String role);
+
     @Override
     <S extends Role> S save(S entity);
+
 }

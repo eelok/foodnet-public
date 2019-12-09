@@ -1,12 +1,14 @@
 package de.htw.foodnet.login;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@EnableAutoConfiguration
+@Data
+@NoArgsConstructor
 @Table(name = "roles")
 public class Role {
 
@@ -18,38 +20,8 @@ public class Role {
     @ManyToMany(mappedBy = "roles")
     private Collection<User> users;
 
-    public Role() {}
     public Role(String name) {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Collection<User> getUsers() {
-        System.out.println(users);
-        return users;
-    }
-
-    public void setUsers(Collection<User> users) {
-        this.users = users;
-    }
-
-    @Override
-    public String toString() {
-        return "Role = " + name;
-    }
 }
