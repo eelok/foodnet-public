@@ -6,6 +6,9 @@ env:
   - PGPORT=5432
   - PGUSER=postgres
   - PGPASSWORD=
+install:
+  - gradle -q
+  - gradle assemble
 deploy:
   provider: heroku
   app: calabacin
