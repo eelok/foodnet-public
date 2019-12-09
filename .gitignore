@@ -1,12 +1,10 @@
 HELP.md
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
 node_modules/
 cypress/integration/examples
-gradle
 
 
 ### STS ###
@@ -34,7 +32,6 @@ out/
 
 css
 
-gradle
 build
 gradlew.bat
 gradlew
