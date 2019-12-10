@@ -23,8 +23,6 @@ public class RecipesController {
 
     private RecipeRepository recipeRepository;
     private PhotoRepository photoRepository;
-    private ImageService imageService;
-
 
     @RequestMapping(value = "")
     public ModelAndView getRecipes(Model model) {
@@ -45,9 +43,8 @@ public class RecipesController {
             @RequestParam("file") MultipartFile file,
             Model model
     ) throws IOException {
-//        recipe.setImages(Collections.singletonList(getImage(file, recipe.getName())));
-//        recipeRepository.save(recipe);
-        imageService.setImageInRecipe(file);
+        recipe.setImages(Collections.singletonList(getImage(file, recipe.getName())));
+        recipeRepository.save(recipe);
         model.addAttribute("recipe", new Recipe());
 
         return "redirect:/recipes";
@@ -55,35 +52,33 @@ public class RecipesController {
 
     @GetMapping("/photo/{id}")
     public void download(@PathVariable("id") long idNo, HttpServletRequest request, HttpServletResponse response) {
-//        Optional<ImageFile> imageFile = photoRepository.findByRecipeId(idNo);
-//        imageFile.ifPresent(image -> {
-//            try {
-//                setResponseImage(response, image);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        });
-        imageService.fetchImageFromForm(response);
+        Optional<ImageFile> imageFile = photoRepository.findByRecipeId(idNo);
+        imageFile.ifPresent(image -> {
+            try {
+                setResponseImage(response, image);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
-//    private void setResponseImage(HttpServletResponse response, ImageFile image) throws IOException {
-//        response.setHeader("Content-Disposition", "inline;filename=\"" + image.getName() + "\"");
-//        OutputStream out = response.getOutputStream();
-//        response.setContentType(image.getContentType());
-//        response.setContentLength(image.getContentLength());
-//        IOUtils.copy(new ByteArrayInputStream(image.getContent()), out);
-//        out.flush();
-//        out.close();
-//
-//    }
+    private void setResponseImage(HttpServletResponse response, ImageFile image) throws IOException {
+        response.setHeader("Content-Disposition", "inline;filename=\"" + image.getName() + "\"");
+        OutputStream out = response.getOutputStream();
+        response.setContentType(image.getContentType());
+        response.setContentLength(image.getContentLength());
+        IOUtils.copy(new ByteArrayInputStream(image.getContent()), out);
+        out.flush();
+        out.close();
+    }
 
-//    private ImageFile getImage(MultipartFile file, String name) throws IOException {
-//        return new ImageFile(
-//                file.getBytes(),
-//                file.getContentType(),
-//                Long.valueOf(file.getSize()).intValue(),
-//                name
-//        );
-//    }
+    private ImageFile getImage(MultipartFile file, String name) throws IOException {
+        return new ImageFile(
+                file.getBytes(),
+                file.getContentType(),
+                Long.valueOf(file.getSize()).intValue(),
+                name
+        );
+    }
 
 }
