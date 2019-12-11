@@ -18,7 +18,7 @@ repositories {
     mavenCentral()
 }
 task install(type: NpmTask) {
-    args = ['install']
+    args = ['install --only=prod']
 }
 task scss(type: NpmTask) {
     args = ['run', 'scss:run']
