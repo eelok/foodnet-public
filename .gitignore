@@ -34,7 +34,6 @@ css
 
 build
 gradlew.bat
-gradlew
 
 cypress/videos/
 cypress/screenshots/

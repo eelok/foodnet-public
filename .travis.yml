@@ -7,7 +7,6 @@ env:
   - PGUSER=postgres
   - PGPASSWORD=
 install:
-  - gradle -q
   - gradle assemble
 deploy:
   provider: heroku
