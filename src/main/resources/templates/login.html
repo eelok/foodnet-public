@@ -10,35 +10,35 @@
 </head>
 <body>
 <header layout:fragment="header"></header>
-
-<div layout:fragment="content" class="container">
+<div layout:fragment="content" class="container cont-login">
     <form class="form--login" th:action="@{/login}" method="post">
-        <div class="row">
-            <div class="col s6 offset-s3">
-                <div class="card z-depth-1 card-login">
-                    <div class="card-action blue-grey white-text">
-                        <h3 class="center-align">Login</h3>
+        <div class="card col">
+            <div class="card-content">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input placeholder="username" type="text" name="username" id="username" class="validate">
+                        <label class="active" for="username">User:</label>
                     </div>
-                    <div class="card-content">
-                        <div class="form-field">
-                            <label for="username">User:</label>
-                            <input type="text" name="username" id="username" class="form-control">
-                        </div>
-                        <div class="form-field">
-                            <label for="password">Password:</label>
-                            <input type="password" name="password" id="password" class="form-control">
-                        </div>
-                        <div th:if="${param.error}" class="alert alert-error">
-                            Invalid username or password.
-                        </div>
-                        <div class="form-field-buttons">
-                            <div class="form-field">
-                                <button type="submit" class="btn-large right-align blue-grey">Login</button>
-                            </div>
-                            <div class="form-field">
-                                <a href="/register" class="btn-large blue-grey">Register</a>
-                            </div>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input placeholder="password" type="password" name="password" id="password" class="form-control">
+                        <label class="active" for="password">Password:</label>
+                    </div>
+                    <div th:if="${param.error}" class="alert alert-error center-align">
+                        Invalid username or password.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button type="submit" class="btn waves-effect waves-light col s12">Login</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field register-link">
+                        <a href="/register" class="right-align">Register Now</a>
                     </div>
                 </div>
             </div>
