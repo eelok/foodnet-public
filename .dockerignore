@@ -1,0 +1,6 @@
+.gradle
+.idea
+build
+cypress
+node_modules
+gradlew.bat
