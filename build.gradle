@@ -15,15 +15,9 @@ node {
     download = true
 }
 
-into('static') { from('src/main/resources/static') }
-sourceSets {
-    main {
-        java {
-            srcDirs= ["src/main/java"]
-        }
-        resources {
-            srcDirs= ["src/main/resources"]
-        }
+processResources {
+    from ('src/main/resources/static') {
+        into 'static'
     }
 }
 
