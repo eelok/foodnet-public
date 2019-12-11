@@ -4,8 +4,8 @@
   "description": "static web",
   "main": "index.js",
   "scripts": {
-    "scss:run": "node-sass styles -o src/main/resources/META-INF/css",
-    "scss:watch": "node-sass --watch styles -o src/main/resources/public/css",
+    "scss:run": "node-sass styles -o src/main/resources/static/css",
+    "scss:watch": "node-sass --watch styles -o src/main/resources/static/css",
     "test": "cypress run",
     "start": "npm run scss:run && npm run scss:watch"
   },
