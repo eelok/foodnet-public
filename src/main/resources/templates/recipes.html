@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html
-    lang="en" xmlns:th="http://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    layout:decorate="~{layout.html}"
-    xmlns:sec="http://www.w3.org/1999/xhtml"
+        lang="en" xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout.html}"
+        xmlns:sec="http://www.w3.org/1999/xhtml"
 >
 <head>
     <title>Recipes</title>
@@ -29,8 +29,8 @@
                     </div>
                     <div class="card-action">
                         <div class="rec-time">
-                            <div rec-time--prepar th:text=" 'PREPARE TIME: ' + ${recipe.prepareTime}"></div>
-                            <div rec-time--cook th:text=" 'COOK TIME: ' + ${recipe.cookTime}">Cook Time:</div>
+                            <div th:text=" 'PREPARE TIME: ' + ${recipe.prepareTime}"></div>
+                            <div th:text=" 'COOK TIME: ' + ${recipe.cookTime}">Cook Time:</div>
                         </div>
                     </div>
                 </div>

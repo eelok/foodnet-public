@@ -70,7 +70,6 @@ public class RecipesController {
         IOUtils.copy(new ByteArrayInputStream(image.getContent()), out);
         out.flush();
         out.close();
-
     }
 
     private ImageFile getImage(MultipartFile file, String name) throws IOException {

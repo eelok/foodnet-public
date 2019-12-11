@@ -30,6 +30,7 @@ public class RegisterService {
         createUser(form);
         return true;
     }
+
     private void createUser(RegisterForm form) {
         User user = new User();
         user.setEnabled(true);
@@ -39,20 +40,22 @@ public class RegisterService {
         createRoles();
         Role userRole = roleRepository.findByName("USER");
         roles.add(userRole);
-        if(form.isChef()) {
+        if (form.isChef()) {
             Role chefRole = roleRepository.findByName("CHEF");
             roles.add(chefRole);
         }
         user.setRoles(roles);
         userRepository.save(user);
     }
+
     private void createRoles() {
         createRoleIfNotExist("USER");
         createRoleIfNotExist("CHEF");
     }
+
     private void createRoleIfNotExist(String roleName) {
         Role userRole = roleRepository.findByName(roleName);
-        if (userRole==null) {
+        if (userRole == null) {
             Role role = new Role(roleName);
             roleRepository.save(role);
         }
