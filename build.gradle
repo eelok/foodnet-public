@@ -24,7 +24,7 @@ processResources {
 repositories {
     mavenCentral()
 }
-task install(type: NpmTask) {
+task installNpmDeps(type: NpmTask) {
     args = ['install', '--only=prod']
 }
 task scss(type: NpmTask) {
@@ -55,5 +55,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-task stage(dependsOn: ['install', 'scss', 'build', 'clean'])
+
+task stage()
+stage.dependsOn([build, clean])
+
+processResources.dependsOn([installNpmDeps, scss])
 build.mustRunAfter clean
