@@ -8,7 +8,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
@@ -39,11 +39,11 @@ class RecipesControllerTest {
     void should_have_attribute_in_model() {
         Model model = mock(Model.class);
         Recipe recipe = mock(Recipe.class);
-        when(recipeService.getRecepies()).thenReturn(Arrays.asList(recipe));
+        when(recipeService.getRecepies()).thenReturn(Collections.singletonList(recipe));
 
         recipesController.getRecipes(model);
 
-        verify(model).addAttribute("recipes", Arrays.asList(recipe));
+        verify(model).addAttribute("recipes", Collections.singletonList(recipe));
     }
 
     @Test
