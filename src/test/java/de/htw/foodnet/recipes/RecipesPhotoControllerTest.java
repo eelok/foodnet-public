@@ -52,11 +52,10 @@ class RecipesPhotoControllerTest {
         when(imageFile.getContentLength()).thenReturn(20);
         Optional<ImageFile> image = Optional.of(imageFile);
 
-        when(recipePhotoService.findByRecipeId(5)).thenReturn(image);
-        ServletOutputStream out = mock(ServletOutputStream.class);
-        when(response.getOutputStream()).thenReturn(out);
+        when(recipePhotoService.findByRecipeId(photoId)).thenReturn(image);
+        when(response.getOutputStream()).thenReturn(mock(ServletOutputStream.class));
 
-        recipesPhotoController.getRecipePhoto(5, request, response);
+        recipesPhotoController.getRecipePhoto(photoId, request, response);
 
         verify(response).setContentType(imageFile.getContentType());
         verify(response).setContentLength(imageFile.getContentLength());
