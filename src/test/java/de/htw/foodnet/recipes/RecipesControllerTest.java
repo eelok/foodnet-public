@@ -53,6 +53,5 @@ class RecipesControllerTest {
         ModelAndView newRecipeForm = recipesController.getNewRecipeForm(model);
 
         assertThat(newRecipeForm.getViewName()).isEqualTo("newRecipes");
-
     }
 }
