@@ -19,6 +19,7 @@ import static org.mockito.Mockito.*;
 class RecipesPhotoControllerTest {
 
     private RecipesPhotoController recipesPhotoController;
+
     @Mock
     private RecipePhotoService recipePhotoService;
 
@@ -42,7 +43,6 @@ class RecipesPhotoControllerTest {
     void should_setContentType() throws IOException {
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
-        long photoId = 5;
 
         ImageFile imageFile = mock(ImageFile.class);
         when(imageFile.getContentType()).thenReturn("contentType");
@@ -51,15 +51,14 @@ class RecipesPhotoControllerTest {
         when(imageFile.getContentLength()).thenReturn(20);
         Optional<ImageFile> image = Optional.of(imageFile);
 
-        when(recipePhotoService.findByRecipeId(photoId)).thenReturn(image);
+        when(recipePhotoService.findByRecipeId(5)).thenReturn(image);
         ServletOutputStream out = mock(ServletOutputStream.class);
         when(response.getOutputStream()).thenReturn(out);
 
-        recipesPhotoController.getRecipePhoto(photoId, request, response);
+        recipesPhotoController.getRecipePhoto(5, request, response);
 
         verify(response).setContentType(imageFile.getContentType());
         verify(response).setContentLength(imageFile.getContentLength());
     }
-
 
 }
