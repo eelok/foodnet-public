@@ -30,9 +30,9 @@ class RecipesPhotoControllerTest {
 
     @Test
     void should_getRecipePhoto() {
+        long photoId = 5;
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
-        long photoId = 5;
 
         recipesPhotoController.getRecipePhoto(photoId, request, response);
 
@@ -41,6 +41,7 @@ class RecipesPhotoControllerTest {
 
     @Test
     void should_setContentType() throws IOException {
+        long photoId = 5;
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
 
