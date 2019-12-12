@@ -46,4 +46,13 @@ class RecipesControllerTest {
         verify(model).addAttribute("recipes", Arrays.asList(recipe));
     }
 
+    @Test
+    void should_getNewRecipeForm() {
+        Model model = mock(Model.class);
+
+        ModelAndView newRecipeForm = recipesController.getNewRecipeForm(model);
+
+        assertThat(newRecipeForm.getViewName()).isEqualTo("newRecipes");
+
+    }
 }
