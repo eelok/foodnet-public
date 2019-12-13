@@ -2,7 +2,7 @@
 <html
     lang="en" xmlns:th="http://www.thymeleaf.org"
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    layout:decorate="~{layout.html}"
+    layout:decorate="~{/layout/layout.html}"
 >
 <head>
     <title>Create Recipes</title>
@@ -13,31 +13,31 @@
         <form class="col s12" th:object="${recipe}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="pasta pesto" id="recipe_name" type="text" th:field="*{name}" class="validate">
+                    <input placeholder="pasta pesto" id="recipe_name" type="text" th:field="${recipe.name}" class="validate">
                     <label class="active" for="recipe_name">Recipe Name:</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s6">
-                    <input  placeholder="15" id="prepare_time" type="text" th:field="*{prepareTime}" class="validate">
+                    <input  placeholder="15" id="prepare_time" type="text" th:field="${recipe.prepareTime}" class="validate">
                     <label class="active" for="prepare_time">Prepare Time</label>
                 </div>
                 <div class="input-field col s6">
-                    <input placeholder="30" id="cook_time" type="text" th:field="*{cookTime}" class="validate">
+                    <input placeholder="30" id="cook_time" type="text" th:field="${recipe.cookTime}" class="validate">
                     <label class="active" for="cook_time">Cooking Time</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="potato:9, carrot:4, sweet pepper:3" id="ingredients" type="text" th:field="*{ingredientsList}" class="validate">
+                    <input placeholder="potato:9, carrot:4, sweet pepper:3" id="ingredients" type="text" th:field="${recipe.ingredientsList}" class="validate">
                     <label class="active" for="ingredients">Ingredients</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="description" rows="5" class="materialize-textarea" th:field="*{description}" placeholder="wash and peel the potatoes, cut them into">
+                    <textarea id="description" rows="5" class="materialize-textarea" th:field="${recipe.description}" placeholder="wash and peel the potatoes, cut them into">
 
                     </textarea>
                     <label class="active" for="description">Description</label>

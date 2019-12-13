@@ -11,5 +11,4 @@ public class FoodNetApplication {
     public static void main(String[] args) {
         SpringApplication.run(FoodNetApplication.class, args);
     }
-
 }

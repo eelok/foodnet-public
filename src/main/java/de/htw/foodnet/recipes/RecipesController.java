@@ -21,15 +21,16 @@ public class RecipesController {
     public ModelAndView getRecipes(Model model) {
         model.addAttribute("recipes", recipeService.getRecepies());
 
-        return new ModelAndView("recipes");
+        return new ModelAndView("recipes/recipes");
     }
 
     @GetMapping(value = "/new")
     public ModelAndView getNewRecipeForm(Model model) {
         model.addAttribute("recipe", new Recipe());
 
-        return new ModelAndView("newRecipes");
+        return new ModelAndView("recipes/newRecipes");
     }
+
 
     @PostMapping("/new")
     public String postRecipe(

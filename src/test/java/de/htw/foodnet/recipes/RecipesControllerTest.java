@@ -34,7 +34,7 @@ class RecipesControllerTest {
 
         ModelAndView recipes = recipesController.getRecipes(model);
 
-        assertThat(recipes.getViewName()).isEqualTo("recipes");
+        assertThat(recipes.getViewName()).isEqualTo("recipes/recipes");
     }
 
     @Test
@@ -54,7 +54,7 @@ class RecipesControllerTest {
 
         ModelAndView newRecipeForm = recipesController.getNewRecipeForm(model);
 
-        assertThat(newRecipeForm.getViewName()).isEqualTo("newRecipes");
+        assertThat(newRecipeForm.getViewName()).isEqualTo("recipes/newRecipes");
     }
 
     @Test
