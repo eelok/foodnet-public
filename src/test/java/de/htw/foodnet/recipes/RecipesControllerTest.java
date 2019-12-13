@@ -6,8 +6,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -54,4 +56,38 @@ class RecipesControllerTest {
 
         assertThat(newRecipeForm.getViewName()).isEqualTo("newRecipes");
     }
+
+    @Test
+    void sould_postResipe() throws IOException {
+        Model model = mock(Model.class);
+        Recipe recipe = mock(Recipe.class);
+        MultipartFile file = mock(MultipartFile.class);
+
+        String recipes = recipesController.postRecipe(recipe, file, model);
+
+        assertThat(recipes).isEqualTo("redirect:/recipes");
+    }
+
+    @Test
+    void should_call_set_images() throws IOException {
+        Model model = mock(Model.class);
+        Recipe recipe = mock(Recipe.class);
+        MultipartFile file = mock(MultipartFile.class);
+
+        recipesController.postRecipe(recipe, file, model);
+
+        verify(recipe).setImages(any());
+    }
+
+    @Test
+    void should_have_attribute() throws IOException {
+        Recipe recipe = mock(Recipe.class);
+        MultipartFile file = mock(MultipartFile.class);
+        Model model = mock(Model.class);
+
+        recipesController.postRecipe(recipe, file, model);
+
+        verify(model).addAttribute("recipe", new Recipe());
+    }
+
 }

@@ -8,7 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
-import java.util.Collections;
+import java.util.List;
 
 @Controller
 @RequestMapping("recipes")
@@ -37,7 +37,11 @@ public class RecipesController {
             @RequestParam("file") MultipartFile file,
             Model model
     ) throws IOException {
-        recipe.setImages(Collections.singletonList(getImage(file, recipe.getName())));
+
+        List<ImageFile> images = new java.util.ArrayList<>();
+        images.add(getImage(file, recipe.getName()));
+        recipe.setImages(images);
+
         recipeService.saveRecipe(recipe);
         model.addAttribute("recipe", new Recipe());
 
