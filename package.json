@@ -21,7 +21,7 @@
   "homepage": "https://github.com/eelok/CutiePets#readme",
   "dependencies": {
     "materialize-css": "^1.0.0",
-    "node-sass": "^4.12.0"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {
     "cypress": "^3.6.0"
